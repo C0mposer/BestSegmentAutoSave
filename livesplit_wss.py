@@ -67,18 +67,4 @@ def get_current_time():
     print("Current Time: " + current_time)
     return current_time
     
-# Check if current pace is PB pace
-def is_pb_pace():
-    current_delta = send_command(livesplit_socket, "getbestpossibletime")
-    print(current_delta)
-    # Convert to Unicode to differenceate between '-' as Hyphen-Minus (45) for none, and '-' as Minus Sign (8722) for negative delta
-    # No Delta present
-    if ord(current_delta[:1]) == 45:
-        return False
-    # If delta is positive, run is not PB Pace
-    elif ord(current_delta[:1]) == 43:
-        return False
-    # If delta is negative, run is PB Pace
-    elif ord(current_delta[:1]) == 8722:
-        return True
 
