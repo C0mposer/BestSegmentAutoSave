@@ -9,7 +9,7 @@ while True:
 
     if livesplit_data.is_connected:
         if livesplit_data.GetCurrentRunningTimeFloat() > 0: # If the timer is running
-            if livesplit_data.previous_best_possible_time != None: # If has saved previous pest possible time at least once
+            if livesplit_data.previous_best_possible_time != None: # If has saved previous best possible time at least once
                 print(f"Current BPT: {livesplit_data.GetCurrentBestPossibleTimeFloat()}\nPrevious BPT: {livesplit_data.GetPreviousBestPossibleTimeFloat()}\n~~~~~~~~~~~~~~~~~~~~~~~~~~\n")
                 if livesplit_data.GetCurrentBestPossibleTimeFloat() < livesplit_data.GetPreviousBestPossibleTimeFloat():
                     save_replay()
